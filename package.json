@@ -9,7 +9,9 @@
   "scripts": {
     "start": "webpack serve",
     "dev": "webpack --mode=development",
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production",
+    "lint": "eslint './src/**/*.ts'",
+    "lint:fix": "eslint --fix './src/**/*.ts'"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
