@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flappy Bird</title>
+    <meta
+      name="description"
+      content="Let's play an arcade game that was successful at the time, Flappy Bird."
+    />
+    <style>
+      body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #000;
+        color: #fff;
+        flex-wrap: wrap;
+        padding-top: 3rem;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      canvas#root {
+        border: 0.5rem solid #333;
+        border-radius: 0.5rem;
+      }
+
+      footer {
+        padding: 3rem;
+        text-align: center;
+        width: 100%;
+        line-height: 1.5;
+      }
+
+      footer a {
+        color: #00ced1;
+      }
+    </style>
+  </head>
+
+  <body>
+    <canvas id="root" height="480" width="320"></canvas>
+    <footer>
+      <div>
+        <a
+          href="https://github.com/smarcelloc/flappy-bird/"
+          rel="noopener"
+          target="_blank"
+          >The project in GitHub.</a
+        >
+      </div>
+      <div>Create by &copy; <span id="year"></span> Marcello Silvério.</div>
+    </footer>
+    <noscript>Ops! This app require enable Javascript in Browser.</noscript>
+    <script src="main.js"></script>
+    <script>
+      document.getElementById('year').innerHTML = new Date().getFullYear();
+    </script>
+  </body>
+</html>
