@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
-    "target": "ES6",
+    "target": "ES5",
     "lib": ["DOM", "DOM.Iterable"],
+    "module": "AMD",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "allowJs": true,
@@ -19,7 +20,10 @@
     "baseUrl": ".",
     "paths": {
       "@src/*": ["./src/*"]
-    }
+    },
+    // Babel or SWC
+    "noEmit": true,
+    "isolatedModules": true
   },
   "include": ["./src/**/*.ts"],
   "exclude": ["node_modules", "build"]
