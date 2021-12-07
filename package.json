@@ -1,0 +1,9 @@
+{
+  "name": "flappy-bird",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/smarcelloc/flappy-bird.git",
+  "author": "Marcello Silvério",
+  "license": "MIT",
+  "private": true
+}
