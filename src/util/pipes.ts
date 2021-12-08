@@ -1,6 +1,6 @@
 import Pipes from '@src/components/Pipes';
 
-const listPipes: Array<Pipes> = [];
+let listPipes: Array<Pipes> = [];
 let framePipes = 0;
 const intervalFramePipes = 100;
 
@@ -32,6 +32,11 @@ const PipesUtil = {
         listPipes.shift();
       }
     }
+  },
+
+  reset() {
+    framePipes = 0;
+    listPipes = [];
   },
 };
 

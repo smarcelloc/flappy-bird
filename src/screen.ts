@@ -74,6 +74,7 @@ export const screenGameOver: Screen = {
   action: function (): void {
     flappyBird.reset();
     score.reset();
+    PipesUtil.reset();
     global.screenCurrent = screenPlay;
   },
 };
