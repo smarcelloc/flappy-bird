@@ -16,7 +16,9 @@ export const screenInit: Screen = {
     floor.show();
     getReady.show();
   },
-  update: function (): void {},
+  update: function (): void {
+    flappyBird.fly();
+  },
   action: function (): void {
     global.screenCurrent = screenPlay;
   },
@@ -29,6 +31,7 @@ export const screenPlay: Screen = {
     floor.show();
   },
   update: function (): void {
+    screenInit.update();
     flappyBird.move();
     screenPlay.break();
   },

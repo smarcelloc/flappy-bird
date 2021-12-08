@@ -12,6 +12,9 @@ class FlappyBird implements DrawImage {
   canvasX = 25;
   canvasY = 50;
 
+  flying = 0;
+  moving = 0;
+
   speed = 0;
   gravity = 0.25;
   jumpHeight = 5;
@@ -38,6 +41,22 @@ class FlappyBird implements DrawImage {
   jump() {
     if (this.canvasY > this.canvasHeight) {
       this.speed = -this.jumpHeight;
+    }
+  }
+
+  winds = [
+    { spriteX: 0, spriteY: 0 }, // wind position from up
+    { spriteX: 0, spriteY: 26 }, // wind position from middle
+    { spriteX: 0, spriteY: 52 }, // wind position from down
+  ];
+
+  fly() {
+    const speedWind = 10;
+    this.flying++;
+
+    if (this.flying % speedWind === 0) {
+      const moving = this.flying % 3;
+      this.spriteY = this.winds[moving].spriteY;
     }
   }
 }
