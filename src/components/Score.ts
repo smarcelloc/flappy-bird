@@ -1,7 +1,8 @@
 import { canvas, context } from '@src/util/sprites';
+import Metal from './Medal';
 
 class Score {
-  private score = 0;
+  private score = 150;
   frame = 0;
   intervalScore = 50;
 
@@ -53,6 +54,18 @@ class Score {
 
     this.score = 0;
     this.frame = 0;
+  }
+
+  showMedal() {
+    if (this.score > 20 && this.score <= 40) {
+      Metal.bronze.show();
+    } else if (this.score > 40 && this.score <= 80) {
+      Metal.silver.show();
+    } else if (this.score > 80 && this.score <= 150) {
+      Metal.gold.show();
+    } else if (this.score > 150) {
+      Metal.platinum.show();
+    }
   }
 }
 

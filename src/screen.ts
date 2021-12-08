@@ -66,6 +66,7 @@ export const screenGameOver: Screen = {
     floor.show();
     flappyBird.show();
     gameOver.show();
+    score.showMedal();
   },
   update: function (): void {},
   action: function (): void {
