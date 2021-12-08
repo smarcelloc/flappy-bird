@@ -1,17 +1,20 @@
 import Background from './components/Background';
 import FlappyBird from './components/FlappyBird';
 import Floor from './components/Floor';
+import GetReady from './components/GetReady';
 import Screen from './interfaces/Screen';
 
 const flappyBird = new FlappyBird();
 const floor = new Floor();
 const background = new Background();
+const getReady = new GetReady();
 
 export const screenInit: Screen = {
   show: function (): void {
     background.show();
     flappyBird.show();
     floor.show();
+    getReady.show();
   },
   update: function (): void {},
   action: function (): void {
@@ -35,7 +38,6 @@ export const screenPlay: Screen = {
   break: function (): void {
     const areaFloor = floor.canvasY - flappyBird.canvasHeight;
     if (flappyBird.canvasY > areaFloor) {
-      flappyBird.canvasY = 40;
       global.screenCurrent = screenInit;
     }
   },
