@@ -50,12 +50,17 @@ export const screenPlay: Screen = {
     flappyBird.jump();
   },
   break: function (): void {
-    const areaFloor = floor.canvasY - flappyBird.canvasHeight;
-
-    if (flappyBird.canvasY > areaFloor) {
-      global.screenCurrent = screenGameOver;
+    const callbackBreak = () => {
       flappyBird.sounds.hit.play();
+      global.screenCurrent = screenGameOver;
+    };
+
+    const areaFloor = floor.canvasY - flappyBird.canvasHeight;
+    if (flappyBird.canvasY > areaFloor) {
+      callbackBreak();
     }
+
+    PipesUtil.break(flappyBird, callbackBreak);
   },
 };
 

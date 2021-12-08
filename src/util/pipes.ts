@@ -1,3 +1,4 @@
+import FlappyBird from '@src/components/FlappyBird';
 import Pipes from '@src/components/Pipes';
 
 let listPipes: Array<Pipes> = [];
@@ -37,6 +38,25 @@ const PipesUtil = {
   reset() {
     framePipes = 0;
     listPipes = [];
+  },
+
+  break(flappyBird: FlappyBird, callback: () => void) {
+    const pipes = listPipes[0] ?? new Pipes();
+
+    const areaXinit =
+      pipes.pipeDown.canvasX < flappyBird.canvasX + flappyBird.canvasWidth;
+    const areaXend = pipes.pipeDown.canvasX > 0;
+
+    const flappyHead = flappyBird.canvasY;
+    const flappyFoot = flappyBird.canvasHeight + flappyBird.canvasY;
+    const pipeUpCanvasY = pipes.pipeDown.canvasHeight + pipes.pipeUp.canvasY;
+
+    const areaYinit = pipeUpCanvasY > flappyHead;
+    const areaYend = pipes.pipeDown.canvasY < flappyFoot;
+
+    if (areaXinit && areaXend && (areaYinit || areaYend)) {
+      callback();
+    }
   },
 };
 
