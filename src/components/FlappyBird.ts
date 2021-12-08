@@ -7,10 +7,10 @@ class FlappyBird implements DrawImage {
   spriteY = 0;
   spriteWidth = 35;
   spriteHeight = 24;
-  canvasX = 25;
-  canvasY = 50;
   canvasWidth = this.spriteWidth;
   canvasHeight = this.spriteHeight;
+  canvasX = 25;
+  canvasY = 50;
 
   show() {
     context.drawImage(

@@ -4,10 +4,10 @@ interface DrawImage {
   spriteY: number;
   spriteWidth: number;
   spriteHeight: number;
-  canvasX: number;
-  canvasY: number;
   canvasWidth: number;
   canvasHeight: number;
+  canvasX: number;
+  canvasY: number;
   show(): void;
 }
 
