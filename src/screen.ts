@@ -3,6 +3,7 @@ import FlappyBird from './components/FlappyBird';
 import Floor from './components/Floor';
 import GameOver from './components/GameOver';
 import GetReady from './components/GetReady';
+import Pipes from './components/Pipes';
 import Screen from './interfaces/Screen';
 
 const flappyBird = new FlappyBird();
@@ -10,6 +11,7 @@ const floor = new Floor();
 const background = new Background();
 const getReady = new GetReady();
 const gameOver = new GameOver();
+const pipes = new Pipes();
 
 export const screenInit: Screen = {
   show: function (): void {
@@ -31,6 +33,7 @@ export const screenPlay: Screen = {
   show: function (): void {
     background.show();
     floor.show();
+    pipes.show();
     flappyBird.show();
   },
   update: function (): void {
@@ -55,6 +58,7 @@ export const screenGameOver: Screen = {
     background.show();
     floor.show();
     flappyBird.show();
+    pipes.show();
     gameOver.show();
   },
   update: function (): void {},
