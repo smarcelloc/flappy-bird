@@ -1,15 +1,7 @@
-import Background from './components/Background';
-import FlappyBird from './components/FlappyBird';
-import Floor from './components/Floor';
-
-const flappyBird = new FlappyBird();
-const floor = new Floor();
-const background = new Background();
+import { screenInit } from './screen';
 
 function loop() {
-  background.show();
-  flappyBird.show();
-  floor.show();
+  screenInit.show();
   requestAnimationFrame(loop);
 }
 
