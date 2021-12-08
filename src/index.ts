@@ -1,7 +1,10 @@
 import { screenInit } from './screen';
 
+global.screenCurrent = screenInit;
+
 function loop() {
-  screenInit.show();
+  global.screenCurrent.show();
+  global.screenCurrent.update();
   requestAnimationFrame(loop);
 }
 

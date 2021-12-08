@@ -1,3 +1,6 @@
+// Declare globals
+declare var screenCurrent: import('@src/interfaces/Screen').default;
+
 // Declare image file
 declare module '*.png' {
   const src: string;
