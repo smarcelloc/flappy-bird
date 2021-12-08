@@ -27,9 +27,16 @@ export const screenPlay: Screen = {
   },
   update: function (): void {
     flappyBird.move();
+    screenPlay.break();
   },
   action: function (): void {
     flappyBird.jump();
   },
-  bre,
+  break: function (): void {
+    const areaFloor = floor.canvasY - flappyBird.canvasHeight;
+    if (flappyBird.canvasY > areaFloor) {
+      flappyBird.canvasY = 40;
+      global.screenCurrent = screenInit;
+    }
+  },
 };
