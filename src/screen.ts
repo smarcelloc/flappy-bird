@@ -3,15 +3,14 @@ import FlappyBird from './components/FlappyBird';
 import Floor from './components/Floor';
 import GameOver from './components/GameOver';
 import GetReady from './components/GetReady';
-import Pipes from './components/Pipes';
 import Screen from './interfaces/Screen';
+import PipesUtil from './util/pipes';
 
 const flappyBird = new FlappyBird();
 const floor = new Floor();
 const background = new Background();
 const getReady = new GetReady();
 const gameOver = new GameOver();
-const pipes = new Pipes();
 
 export const screenInit: Screen = {
   show: function (): void {
@@ -32,8 +31,8 @@ export const screenInit: Screen = {
 export const screenPlay: Screen = {
   show: function (): void {
     background.show();
+    PipesUtil.showMove();
     floor.show();
-    pipes.show();
     flappyBird.show();
   },
   update: function (): void {
@@ -41,6 +40,7 @@ export const screenPlay: Screen = {
     flappyBird.move();
     screenPlay.break();
     floor.move();
+    PipesUtil.generate();
   },
   action: function (): void {
     flappyBird.jump();
@@ -56,9 +56,9 @@ export const screenPlay: Screen = {
 export const screenGameOver: Screen = {
   show: function (): void {
     background.show();
+    PipesUtil.showBreak();
     floor.show();
     flappyBird.show();
-    pipes.show();
     gameOver.show();
   },
   update: function (): void {},

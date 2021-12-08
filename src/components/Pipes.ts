@@ -1,5 +1,5 @@
 import DrawImage from '@src/interfaces/DrawImage';
-import { context, sprites } from '@src/util/sprites';
+import { canvas, context, sprites } from '@src/util/sprites';
 
 class Pipes {
   pipeUp: DrawImage = {
@@ -10,7 +10,7 @@ class Pipes {
     spriteHeight: 400,
     canvasWidth: 52,
     canvasHeight: 400,
-    canvasX: 250,
+    canvasX: -100,
     canvasY: 0,
     show: () => {
       context.drawImage(
@@ -35,7 +35,7 @@ class Pipes {
     spriteHeight: 400,
     canvasWidth: 52,
     canvasHeight: 400,
-    canvasX: 200,
+    canvasX: -100,
     canvasY: 0,
     show: () => {
       context.drawImage(
@@ -52,9 +52,29 @@ class Pipes {
     },
   };
 
+  moving = canvas.width;
+  speed = 2;
+  spaceBetweenPipes = 24 * 5; // 24px height of Flappy Bird
+
   show() {
     this.pipeUp.show();
     this.pipeDown.show();
+  }
+
+  move() {
+    this.moving -= this.speed;
+    this.pipeUp.canvasX = this.moving;
+    this.pipeDown.canvasX = this.moving;
+  }
+
+  generate() {
+    const max = 360;
+    const min = 200;
+    const randomY = Math.floor(Math.random() * (max - min) + min);
+
+    this.pipeUp.canvasY = -randomY;
+    this.pipeDown.canvasY =
+      this.pipeUp.canvasHeight + this.spaceBetweenPipes - randomY;
   }
 }
 
