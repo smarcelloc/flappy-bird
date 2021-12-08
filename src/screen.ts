@@ -13,6 +13,10 @@ export const screenInit: Screen = {
     flappyBird.show();
     floor.show();
   },
-  update: function (): void {},
-  action: function (): void {},
+  update: function (): void {
+    flappyBird.move();
+  },
+  action: function (): void {
+    flappyBird.jump();
+  },
 };

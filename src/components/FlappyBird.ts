@@ -12,6 +12,10 @@ class FlappyBird implements DrawImage {
   canvasX = 25;
   canvasY = 50;
 
+  speed = 0;
+  gravity = 0.25;
+  jumpHeight = 5;
+
   show() {
     context.drawImage(
       this.image,
@@ -24,6 +28,17 @@ class FlappyBird implements DrawImage {
       this.canvasWidth,
       this.canvasHeight
     );
+  }
+
+  move() {
+    this.speed += this.gravity;
+    this.canvasY = Math.floor(this.canvasY + this.speed);
+  }
+
+  jump() {
+    if (this.canvasY > this.canvasHeight) {
+      this.speed = -this.jumpHeight;
+    }
   }
 }
 
