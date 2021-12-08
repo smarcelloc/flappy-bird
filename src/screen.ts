@@ -47,8 +47,10 @@ export const screenPlay: Screen = {
   },
   break: function (): void {
     const areaFloor = floor.canvasY - flappyBird.canvasHeight;
+
     if (flappyBird.canvasY > areaFloor) {
       global.screenCurrent = screenGameOver;
+      flappyBird.sounds.hit.play();
     }
   },
 };

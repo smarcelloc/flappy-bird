@@ -1,4 +1,5 @@
 import DrawImage from '@src/interfaces/DrawImage';
+import { effectHit } from '@src/util/sounds';
 import { context, sprites } from '@src/util/sprites';
 
 class FlappyBird implements DrawImage {
@@ -43,6 +44,10 @@ class FlappyBird implements DrawImage {
       this.speed = -this.jumpHeight;
     }
   }
+
+  sounds = {
+    hit: effectHit,
+  };
 
   winds = [
     { spriteX: 0, spriteY: 0 }, // wind position from up
