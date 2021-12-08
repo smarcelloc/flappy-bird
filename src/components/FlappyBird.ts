@@ -46,7 +46,7 @@ class FlappyBird implements DrawImage {
   }
 
   sounds = {
-    hit: effectHit,
+    hit: () => effectHit.play(),
   };
 
   winds = [

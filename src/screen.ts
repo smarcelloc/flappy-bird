@@ -45,7 +45,7 @@ export const screenPlay: Screen = {
   },
   break: function (): void {
     const callbackBreak = () => {
-      FlappyBird.sounds.hit.play();
+      FlappyBird.sounds.hit();
       global.screenCurrent = screenGameOver;
     };
 
