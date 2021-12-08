@@ -27,4 +27,4 @@ class GetReady implements DrawImage {
   }
 }
 
-export default GetReady;
+export default new GetReady();

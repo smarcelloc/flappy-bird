@@ -37,4 +37,4 @@ class Floor implements DrawImage {
   }
 }
 
-export default Floor;
+export default new Floor();

@@ -105,4 +105,4 @@ class Score {
   }
 }
 
-export default Score;
+export default new Score();

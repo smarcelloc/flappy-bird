@@ -7,23 +7,16 @@ import Score from './components/Score';
 import Screen from './interfaces/Screen';
 import PipesUtil from './util/pipes';
 
-const flappyBird = new FlappyBird();
-const floor = new Floor();
-const background = new Background();
-const getReady = new GetReady();
-const gameOver = new GameOver();
-const score = new Score();
-
 export const screenInit: Screen = {
   show: function (): void {
-    background.show();
-    flappyBird.show();
-    floor.show();
-    getReady.show();
+    Background.show();
+    Floor.show();
+    FlappyBird.show();
+    GetReady.show();
   },
   update: function (): void {
-    flappyBird.fly();
-    floor.move();
+    FlappyBird.fly();
+    Floor.move();
   },
   action: function (): void {
     global.screenCurrent = screenPlay;
@@ -32,53 +25,54 @@ export const screenInit: Screen = {
 
 export const screenPlay: Screen = {
   show: function (): void {
-    background.show();
+    Background.show();
     PipesUtil.showMove();
-    floor.show();
-    flappyBird.show();
-    score.show();
+    Floor.show();
+    FlappyBird.show();
+    Score.show();
   },
   update: function (): void {
-    screenInit.update();
-    flappyBird.move();
-    screenPlay.break();
-    floor.move();
+    FlappyBird.fly();
+    Floor.move();
+    FlappyBird.move();
     PipesUtil.generate();
-    score.scoring();
+    Score.scoring();
+
+    screenPlay.break();
   },
   action: function (): void {
-    flappyBird.jump();
+    FlappyBird.jump();
   },
   break: function (): void {
     const callbackBreak = () => {
-      flappyBird.sounds.hit.play();
+      FlappyBird.sounds.hit.play();
       global.screenCurrent = screenGameOver;
     };
 
-    const areaFloor = floor.canvasY - flappyBird.canvasHeight;
-    if (flappyBird.canvasY > areaFloor) {
+    const areaFloor = Floor.canvasY - FlappyBird.canvasHeight;
+    if (FlappyBird.canvasY > areaFloor) {
       callbackBreak();
     }
 
-    PipesUtil.break(flappyBird, callbackBreak);
+    PipesUtil.break(FlappyBird, callbackBreak);
   },
 };
 
 export const screenGameOver: Screen = {
   show: function (): void {
-    background.show();
+    Background.show();
     PipesUtil.showBreak();
-    floor.show();
-    flappyBird.show();
-    gameOver.show();
-    score.showMedal();
-    score.showScoreboard();
-    score.showBest();
+    Floor.show();
+    FlappyBird.show();
+    GameOver.show();
+    Score.showMedal();
+    Score.showScoreboard();
+    Score.showBest();
   },
   update: function (): void {},
   action: function (): void {
-    flappyBird.reset();
-    score.reset();
+    FlappyBird.reset();
+    Score.reset();
     PipesUtil.reset();
     global.screenCurrent = screenPlay;
   },

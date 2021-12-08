@@ -76,4 +76,4 @@ class FlappyBird implements DrawImage {
   }
 }
 
-export default FlappyBird;
+export default new FlappyBird();

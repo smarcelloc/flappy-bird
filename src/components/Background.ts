@@ -30,4 +30,4 @@ class Background implements DrawImage {
   }
 }
 
-export default Background;
+export default new Background();

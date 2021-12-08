@@ -26,4 +26,4 @@ class GameOver implements DrawImage {
   }
 }
 
-export default GameOver;
+export default new GameOver();
