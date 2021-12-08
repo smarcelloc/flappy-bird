@@ -7,10 +7,14 @@ class Floor implements DrawImage {
   spriteY = 610;
   spriteWidth = 224;
   spriteHeight = 112;
-  canvasWidth = canvas.width;
+  canvasWidth = canvas.width + 100;
   canvasHeight = this.spriteHeight;
-  canvasX = 0;
+  canvasX = -10;
   canvasY = canvas.height - this.canvasHeight;
+
+  moving = 0;
+  speed = 3;
+  repeatInMoving = 25;
 
   show() {
     context.drawImage(
@@ -24,6 +28,12 @@ class Floor implements DrawImage {
       this.canvasWidth,
       this.canvasHeight
     );
+  }
+
+  move() {
+    this.moving--;
+    this.canvasX = this.moving * this.speed;
+    this.moving %= this.repeatInMoving;
   }
 }
 

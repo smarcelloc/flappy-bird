@@ -20,6 +20,7 @@ export const screenInit: Screen = {
   },
   update: function (): void {
     flappyBird.fly();
+    floor.move();
   },
   action: function (): void {
     global.screenCurrent = screenPlay;
@@ -36,6 +37,7 @@ export const screenPlay: Screen = {
     screenInit.update();
     flappyBird.move();
     screenPlay.break();
+    floor.move();
   },
   action: function (): void {
     flappyBird.jump();
