@@ -3,6 +3,7 @@ import FlappyBird from './components/FlappyBird';
 import Floor from './components/Floor';
 import GameOver from './components/GameOver';
 import GetReady from './components/GetReady';
+import Score from './components/Score';
 import Screen from './interfaces/Screen';
 import PipesUtil from './util/pipes';
 
@@ -11,6 +12,7 @@ const floor = new Floor();
 const background = new Background();
 const getReady = new GetReady();
 const gameOver = new GameOver();
+const score = new Score();
 
 export const screenInit: Screen = {
   show: function (): void {
@@ -34,6 +36,7 @@ export const screenPlay: Screen = {
     PipesUtil.showMove();
     floor.show();
     flappyBird.show();
+    score.show();
   },
   update: function (): void {
     screenInit.update();
@@ -41,6 +44,7 @@ export const screenPlay: Screen = {
     screenPlay.break();
     floor.move();
     PipesUtil.generate();
+    score.scoring();
   },
   action: function (): void {
     flappyBird.jump();
@@ -66,6 +70,7 @@ export const screenGameOver: Screen = {
   update: function (): void {},
   action: function (): void {
     flappyBird.reset();
+    score.reset();
     global.screenCurrent = screenPlay;
   },
 };
