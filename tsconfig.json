@@ -12,7 +12,6 @@
     "newLine": "lf",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
     "noImplicitAny": true,
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
