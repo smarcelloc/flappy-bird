@@ -1,7 +1,9 @@
-import { context, sprites } from './util/sprites';
+import FlappyBird from './components/FlappyBird';
+
+const flappyBird = new FlappyBird();
 
 function loop() {
-  context?.drawImage(sprites, 0, 0, 35, 24, 25, 50, 35, 24);
+  flappyBird.show();
   requestAnimationFrame(loop);
 }
 
