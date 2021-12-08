@@ -54,7 +54,7 @@ export const screenPlay: Screen = {
       callbackBreak();
     }
 
-    PipesUtil.break(FlappyBird, callbackBreak);
+    PipesUtil.break(callbackBreak);
   },
 };
 

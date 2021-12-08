@@ -40,19 +40,25 @@ const PipesUtil = {
     listPipes = [];
   },
 
-  break(flappyBird: FlappyBird, callback: () => void) {
+  break(callback: () => void) {
     const pipes = listPipes[0] ?? new Pipes();
 
-    const areaXinit =
-      pipes.pipeDown.canvasX < flappyBird.canvasX + flappyBird.canvasWidth;
-    const areaXend = pipes.pipeDown.canvasX > 0;
+    const flappyHead = FlappyBird.canvasY;
+    const flappyFoot = flappyHead + FlappyBird.canvasHeight;
+    const flappyCoast = FlappyBird.canvasX;
+    const flappyFront = flappyCoast + FlappyBird.canvasWidth;
 
-    const flappyHead = flappyBird.canvasY;
-    const flappyFoot = flappyBird.canvasHeight + flappyBird.canvasY;
-    const pipeUpCanvasY = pipes.pipeDown.canvasHeight + pipes.pipeUp.canvasY;
+    const pipesX1 = pipes.pipeDown.canvasX;
+    const pipesX2 = pipesX1 + pipes.pipeDown.canvasWidth;
 
-    const areaYinit = pipeUpCanvasY > flappyHead;
-    const areaYend = pipes.pipeDown.canvasY < flappyFoot;
+    const pipeDownY = pipes.pipeDown.canvasY;
+    const pipeUpY = pipes.pipeUp.canvasY + pipes.pipeUp.canvasHeight;
+
+    const areaXinit = pipesX1 < flappyFront;
+    const areaXend = pipesX2 > flappyCoast;
+
+    const areaYinit = pipeUpY > flappyHead;
+    const areaYend = pipeDownY < flappyFoot;
 
     if (areaXinit && areaXend && (areaYinit || areaYend)) {
       callback();

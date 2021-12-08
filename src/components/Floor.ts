@@ -7,14 +7,14 @@ class Floor implements DrawImage {
   spriteY = 610;
   spriteWidth = 224;
   spriteHeight = 112;
-  canvasWidth = canvas.width + 100;
+  canvasWidth = canvas.width + 200;
   canvasHeight = this.spriteHeight;
-  canvasX = -10;
+  canvasX = -100;
   canvasY = canvas.height - this.canvasHeight;
 
   moving = 0;
-  speed = 3;
-  repeatInMoving = 25;
+  speed = 5;
+  repeatInMoving = 20;
 
   show() {
     context.drawImage(
