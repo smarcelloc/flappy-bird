@@ -48,19 +48,23 @@ const PipesUtil = {
     const flappyCoast = FlappyBird.canvasX;
     const flappyFront = flappyCoast + FlappyBird.canvasWidth;
 
-    const pipesX1 = pipes.pipeDown.canvasX;
-    const pipesX2 = pipesX1 + pipes.pipeDown.canvasWidth;
+    const pipesXstart = pipes.pipeDown.canvasX;
+    const pipesXend = pipesXstart + pipes.pipeDown.canvasWidth;
 
     const pipeDownY = pipes.pipeDown.canvasY;
     const pipeUpY = pipes.pipeUp.canvasY + pipes.pipeUp.canvasHeight;
 
-    const areaXinit = pipesX1 < flappyFront;
-    const areaXend = pipesX2 > flappyCoast;
+    const areaCollisionXstart = pipesXstart < flappyFront;
+    const areaCollisionXend = pipesXend > flappyCoast;
 
-    const areaYinit = pipeUpY > flappyHead;
-    const areaYend = pipeDownY < flappyFoot;
+    const areaCollisionYstart = pipeUpY > flappyHead;
+    const areaCollisionYend = pipeDownY < flappyFoot;
 
-    if (areaXinit && areaXend && (areaYinit || areaYend)) {
+    if (
+      areaCollisionXstart &&
+      areaCollisionXend &&
+      (areaCollisionYstart || areaCollisionYend)
+    ) {
       callback();
     }
   },
