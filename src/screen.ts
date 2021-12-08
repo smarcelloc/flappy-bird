@@ -13,10 +13,23 @@ export const screenInit: Screen = {
     flappyBird.show();
     floor.show();
   },
+  update: function (): void {},
+  action: function (): void {
+    global.screenCurrent = screenPlay;
+  },
+};
+
+export const screenPlay: Screen = {
+  show: function (): void {
+    background.show();
+    flappyBird.show();
+    floor.show();
+  },
   update: function (): void {
     flappyBird.move();
   },
   action: function (): void {
     flappyBird.jump();
   },
+  bre,
 };
