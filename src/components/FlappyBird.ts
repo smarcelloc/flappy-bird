@@ -59,6 +59,16 @@ class FlappyBird implements DrawImage {
       this.spriteY = this.winds[moving].spriteY;
     }
   }
+
+  reset() {
+    this.canvasX = 25;
+    this.canvasY = 50;
+    this.flying = 0;
+    this.moving = 0;
+    this.speed = 0;
+    this.gravity = 0.25;
+    this.jumpHeight = 5;
+  }
 }
 
 export default FlappyBird;
