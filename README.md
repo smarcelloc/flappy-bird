@@ -21,14 +21,3 @@ It correctly bundles Babel in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
-
-## Contributing
-
-Want to contribute to the project?
-
-- Send pull request with new improvements or fixes.
-- [Report bugs or suggestion](https://github.com/smarcelloc/flappy-bird/issues)
-
-## License
-
-[MIT License](./LICENSE) © Marcello Silvério
