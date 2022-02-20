@@ -1,12 +1,6 @@
-<p align="center">
-  <a href="http://flappy-bird-gold.vercel.app/">
-   <img alt="Flappy Bird" src="https://github.com/omariosouto/flappy-bird-devsoutinho/raw/master/_docs/logo.png" />
-  </a>
-</p>
+# Flappy Bird
 
 Let's play an arcade game that was successful at the time, Flappy Bird.
-
-### [Demo View](http://flappy-bird-gold.vercel.app/)
 
 ## Get Started
 
