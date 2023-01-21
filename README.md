@@ -4,14 +4,17 @@
   </a>
 </p>
 
-Let's play an arcade game that was successful at the time, Flappy Bird.
+Let's play an arcade game that was successful at the time, Flappy Bird in Offline.
 
 ## Description
 Flappy Bird is a popular mobile game developed by Dong Nguyen and published by dotGears. The game is a side-scrolling game in which the player controls a bird that must navigate through a series of pipes without hitting them. The game is known for its simple yet challenging gameplay, as well as its retro-style graphics.
 
 A version of the game made with TypeScript would be a re-implementation of the original game, but written in TypeScript instead of the original programming language. TypeScript is a superset of JavaScript that adds optional static typing and other features, making it a popular choice for large-scale projects. A version of Flappy Bird made in TypeScript would likely have improved scalability and maintainability compared to the original version, as well as improved developer productivity.
 
-### [Demo View](http://flappy-bird-gold.vercel.app/)
+### [Demo View](https://flappy-bird-beta.vercel.app/)
+
+## Offline Game - PWA
+One of the key features of PWAs is that they can be installed on a user's device, allowing them to be launched and used offline. This is made possible by the use of service workers, a JavaScript script that runs in the background and allows for offline functionality and other features such as push notifications. PWAs also have a native-like look and feel, with icons, full-screen mode and other features.
 
 ## Get Started
 
